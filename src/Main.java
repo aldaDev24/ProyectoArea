@@ -1,3 +1,10 @@
+/**
+ *Integrantes del trabajo:
+ * - Fiestas Anton Manuel ALdair
+ * - Dominguez Rosas Josue
+ * - Muñoz Jabo Frank Eddie
+ * - Nima Erazo Nilson Cristobal
+*/
 public class Main {
     public static void main(String[] args) {
 
