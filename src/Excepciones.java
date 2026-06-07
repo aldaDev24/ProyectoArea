@@ -27,10 +27,10 @@ public class Excepciones {
         }
     }
 
-    public static void validarInfinity(double valor){
+    public static void validarInfinity(double valor, String nombre){
         if(Double.isInfinite(valor)){
             throw new IllegalArgumentException(
-                    "El numero ingresado es demasiado grande"
+                    nombre + " es demasiado grande"
             );
         }
     }
