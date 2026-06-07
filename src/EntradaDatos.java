@@ -6,7 +6,6 @@ public class EntradaDatos {
     public EntradaDatos() {
         this.scanner = new Scanner(System.in);
     }
-   import java.util.InputMismatchException;
 
     public double[] leerCoeficientes() {
         double[] coeficientes = new double[3];
@@ -32,24 +31,44 @@ public class EntradaDatos {
             }
         }
     }
-    public double[] leerLimites(double a, double b) {
+    public double[] leerLimites() {
         double[] limites = new double[2];
-        if (a > b) {
-            limites[0] = b;
-            limites[1] = a;
-        } else {
-            limites[0] = a;
-            limites[1] = b;
-        }
 
-        return limites;
+        while(true){
+            try{
+
+                System.out.print("Ingrese el limite inferior: ");
+                double a = scanner.nextDouble();
+
+                System.out.print("Ingrese el limite superior: ");
+                double b = scanner.nextDouble();
+
+                if(a>b){
+                    limites[0]=b;
+                    limites[1]=a;
+                }else{
+                    limites[0]=a;
+                    limites[1]=b;
+                }
+
+                return limites;
+            }catch(InputMismatchException e){
+                System.out.println("Error: Debe ingresar numeros validos. Intente nuevamente.\n");
+                scanner.next();
+            }
+        }
     }
 
     public int leerNumeroTrapecios() {
-        int n;
-            System.out.print("Número de trapecios (n): ");
-            n = scanner.nextInt();
-        return n;
+        while(true){
+            try{
+                System.out.print("Numero de trapecios (n): ");
+                return scanner.nextInt();
+            }catch(InputMismatchException e){
+                System.out.println("Debe ingresar un numero entero.");
+                scanner.next();
+            }
+        }
     }
 }
 
