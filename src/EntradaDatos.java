@@ -17,11 +17,17 @@ public class EntradaDatos {
                 System.out.print("Coeficiente a (x²): ");
                 coeficientes[0] = scanner.nextDouble();
 
+                Excepciones.validarInfinity(coeficientes[0],"El coeficiente a");
+
                 System.out.print("Coeficiente b (x¹): ");
                 coeficientes[1] = scanner.nextDouble();
 
+                Excepciones.validarInfinity(coeficientes[1],"El coeficiente b");
+
                 System.out.print("Coeficiente c (término independiente): ");
                 coeficientes[2] = scanner.nextDouble();
+
+                Excepciones.validarInfinity(coeficientes[2],"El coeficiente c");
 
                 return coeficientes;
 
@@ -39,9 +45,11 @@ public class EntradaDatos {
 
                 System.out.print("Ingrese el limite inferior: ");
                 double a = scanner.nextDouble();
+                Excepciones.validarInfinity(a,"El limite superior");
 
                 System.out.print("Ingrese el limite superior: ");
                 double b = scanner.nextDouble();
+                Excepciones.validarInfinity(b,"El limite inferior");
 
                 if(a>b){
                     limites[0]=b;
