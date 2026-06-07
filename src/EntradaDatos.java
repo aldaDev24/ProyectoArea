@@ -47,18 +47,8 @@ public class EntradaDatos {
 
     public int leerNumeroTrapecios() {
         int n;
-        while (true) {
             System.out.print("Número de trapecios (n): ");
             n = scanner.nextInt();
-
-            if (n <= 0) {
-                System.out.println("Error: El número de trapecios debe ser mayor a 0.");
-            } else if (n >= 100_000_000) {
-                System.out.println("Error: 'n' demasiado grande. Causará errores de redondeo. Intente un valor menor.");
-            } else {
-                break;
-            }
-        }
         return n;
     }
 }
