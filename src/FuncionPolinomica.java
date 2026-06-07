@@ -1,5 +1,5 @@
 public class FuncionPolinomica {
-    public double[] coeficientes;
+    private double[] coeficientes;
 
 //constructor de la clase FuncionPolinomica
     public FuncionPolinomica(double[] coeficientes) {
@@ -10,7 +10,7 @@ public class FuncionPolinomica {
     public double evaluar(double x) {
         double resultado = 0.0;
         for (int i = 0; i < coeficientes.length; i++) {
-            resultado += coeficientes[coeficientes.length - 1 - i] * Math.pow(x, coeficientes.length - 1 - i);
+            resultado += coeficientes[i] * Math.pow(x, coeficientes.length - 1 - i);
         }
         return resultado;
     }
