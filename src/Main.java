@@ -1,15 +1,30 @@
 public class Main {
     public static void main(String[] args) {
 
-        // Leer datos
+        try{
+            // Crear entrada de datos
 
-        // Validar datos
+            // Leer coeficientes
 
-        // Crear funcion
+            // Validar funcion
 
-        // Calcular area
+            // Leer limites
 
-        // Mostrar resultado
+            // Leer numeros de trapecios
+
+            // Validar numero de trapecios
+
+            // Crear FuncionPolinomica
+
+            // Crear MetodoTrapecio
+
+            // Calcular área
+
+            //  Mostrar resultado
+
+        }catch(Exception e){
+
+        }
 
     }
 }
