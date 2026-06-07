@@ -7,7 +7,7 @@ public class Excepciones {
         }
     }
 
-    public static void validarFuncion(Double[] coeficientes){
+    public static void validarFuncion(double[] coeficientes){
         if (coeficientes == null) {
             throw new IllegalArgumentException(
                     "Los coeficientes no pueden ser nulos"
@@ -20,7 +20,7 @@ public class Excepciones {
             );
         }
 
-        if (coeficientes[0].equals(0.0)){
+        if (coeficientes[0] == 0.0){
             throw new IllegalArgumentException(
                     "El coeficiente del termino cuadratico no puede ser cero"
             );
