@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class EntradaDatos {
     private final Scanner scanner;
@@ -5,35 +6,45 @@ public class EntradaDatos {
     public EntradaDatos() {
         this.scanner = new Scanner(System.in);
     }
+   import java.util.InputMismatchException;
+
     public double[] leerCoeficientes() {
-        // Arreglo de 3 posiciones: [0] es 'c', [1] es 'b', [2] es 'a'
         double[] coeficientes = new double[3];
 
-        System.out.println("--- Ingrese los coeficientes de la función cuadrática (ax² + bx + c) ---");
+        while (true) {
+            try {
+                System.out.println("--- Ingrese los coeficientes de la función cuadrática (ax² + bx + c) ---");
 
-        System.out.print("Coeficiente a (x²): ");
-        coeficientes[2] = scanner.nextDouble();
+                System.out.print("Coeficiente a (x²): ");
+                coeficientes[0] = scanner.nextDouble();
 
-        System.out.print("Coeficiente b (x¹): ");
-        coeficientes[1] = scanner.nextDouble();
+                System.out.print("Coeficiente b (x¹): ");
+                coeficientes[1] = scanner.nextDouble();
 
-        System.out.print("Coeficiente c (término independiente): ");
-        coeficientes[0] = scanner.nextDouble();
+                System.out.print("Coeficiente c (término independiente): ");
+                coeficientes[2] = scanner.nextDouble();
 
-        return coeficientes;
+                return coeficientes;
+
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Debe ingresar un número decimal válido. Intente nuevamente.\n");
+                scanner.next();
+            }
+        }
     }
-
-    public double[] leerLimites() {
-        double[] limites = new double[2]; // [0] = inferior, [1] = superior
-
-        System.out.print("Límite inferior: ");
-        limites[0] = scanner.nextDouble();
-
-        System.out.print("Límite superior: ");
-        limites[1] = scanner.nextDouble();
+    public double[] leerLimites(double a, double b) {
+        double[] limites = new double[2];
+        if (a > b) {
+            limites[0] = b;
+            limites[1] = a;
+        } else {
+            limites[0] = a;
+            limites[1] = b;
+        }
 
         return limites;
     }
+
     public int leerNumeroTrapecios() {
         int n;
         while (true) {
@@ -50,12 +61,5 @@ public class EntradaDatos {
         }
         return n;
     }
-    public static void main(String[] args) {
-        EntradaDatos entrada = new EntradaDatos();
-        double[] coeficientes = entrada.leerCoeficientes();
-        double[] limites = entrada.leerLimites();
-        int trapecios = entrada.leerNumeroTrapecios();
-
-        System.out.println("\n--- [MÓDULO ENTRADA] Datos enviados a la rama 'entrada-datos' ---");
-    }
 }
+
