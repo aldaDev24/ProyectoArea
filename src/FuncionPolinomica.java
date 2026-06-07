@@ -5,6 +5,10 @@ public class FuncionPolinomica {
     public FuncionPolinomica(double[] coeficientes) {
         this.coeficientes = coeficientes;
     }
+
+    public double[] getCoeficientes() {
+        return coeficientes;
+    }
 // Esta función evalua el valor de la funcion para un valor de x
     public double evaluar(double x) {
         double resultado = 0.0;
